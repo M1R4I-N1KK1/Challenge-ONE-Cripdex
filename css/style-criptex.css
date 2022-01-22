@@ -1,0 +1,32 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body{
+    max-height: 100%;
+    min-height: 100vh;
+}
+
+footer div a, header div a{
+    text-decoration: none;
+    color: inherit;
+}
+
+footer div a:hover, header div a:hover{
+    color: inherit;
+}
+
+.header-title {
+    background-image: url('../img/header.jpg');
+    background-repeat: no-repeat;
+    background-position: center left;
+    border-radius: 2px;
+}
+
+.footer-style {
+    border-radius: 2px;
+    margin: 0px;
+    background: #f0f0f0;
+    padding: 18px 10px;
+}

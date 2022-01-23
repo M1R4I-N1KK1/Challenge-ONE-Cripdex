@@ -34,6 +34,6 @@ function limpar() {
 
 document.querySelector('#codificar').addEventListener('keyup', function () {
 
-    this.value = this.value.replace(/([\u0300-\u036f]|[^a-zA-Z\s])/g, '');
+    this.value = this.value.replace(/([\u0300-\u036f]|[^a-zA-Z\s])/g, '').toLowerCase();
 
 });

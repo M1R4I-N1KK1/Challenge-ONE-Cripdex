@@ -1,12 +1,11 @@
 var btn_copia = document.querySelector('#btn_copia');
 
 function copiaTexto() {
-    let copia_texto = document.querySelector('#decodificar').value;
+    let copia_texto = texto_codificado.value;
 
     if (!copia_texto == '') {
         navigator.clipboard.writeText(copia_texto)
-        btn_copia.classList.remove('btn-primary')
-        btn_copia.classList.add('btn-success')
+        btnCopiaEfeito(true)
         mensagemError()
     } else {
         mensagemError(true)
@@ -14,7 +13,7 @@ function copiaTexto() {
 };
 
 function mensagemError(error) {
-    msg = document.querySelector("#msg-error");
+    let msg = document.querySelector("#msg-error");
 
     if (error) {
         msg.classList.remove('d-none')
@@ -25,15 +24,25 @@ function mensagemError(error) {
     }
 }
 
-function limpar() {
-    let campo_texto = document.querySelector("#codificar");
-    campo_texto.value = "";
-    campo_texto.focus();
+function limparEntrada() {
+    texto_entrada.value = "";
+    texto_entrada.focus();
 
 };
 
-document.querySelector('#codificar').addEventListener('keyup', function () {
+texto_entrada.addEventListener('keyup', function () {
 
     this.value = this.value.replace(/([\u0300-\u036f]|[^a-zA-Z\s])/g, '').toLowerCase();
 
 });
+
+function btnCopiaEfeito(efeito){
+  if(efeito){
+    btn_copia.classList.remove('btn-primary')
+    btn_copia.classList.add('btn-success')
+    
+  }else{
+    btn_copia.classList.remove('btn-success')
+    btn_copia.classList.add('btn-primary')
+  }
+};

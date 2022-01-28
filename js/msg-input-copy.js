@@ -1,5 +1,3 @@
-var btn_copia = document.querySelector('#btn_copia');
-
 function copiaTexto() {
     let copia_texto = texto_codificado.value;
 
@@ -30,11 +28,20 @@ function limparEntrada() {
 
 };
 
-texto_entrada.addEventListener('keyup', function () {
+function verificarCaracter(){
+		    texto_entrada.value = texto_entrada.value.replace(/([\u0300-\u036f]|[^a-zA-Z\s])/g, '').toLowerCase().split();
+};
 
-    this.value = this.value.replace(/([\u0300-\u036f]|[^a-zA-Z\s])/g, '').toLowerCase();
 
+texto_entrada.addEventListener('keyup', function(){
+    verificarCaracter()
+}); 
+
+
+texto_entrada.addEventListener("paste", function(){
+		   setTimeout(verificarCaracter, 100)
 });
+
 
 function btnCopiaEfeito(efeito){
   if(efeito){
@@ -46,3 +53,5 @@ function btnCopiaEfeito(efeito){
     btn_copia.classList.add('btn-primary')
   }
 };
+
+

@@ -1,9 +1,9 @@
 var texto_entrada = document.querySelector('#codificar');
 var texto_codificado = document.querySelector('#decodificar');
+var btn_copia = document.querySelector('#btn_copia');
 
 function codificar() {
     let texto_code = texto_entrada.value.toLowerCase();
-
     let achar = ['e', 'i', 'a', 'o', 'u'];
     let substituir = ['enter', 'imes', 'ai', 'ober', 'ufat'];
   
@@ -27,7 +27,7 @@ function codificar() {
 function decodificar() {
     let texto = texto_entrada.value;
     let achar = ['ai', 'enter', 'imes', 'ober', 'ufat'];
-    let substituir = ['a', 'e', 'i', 'o', 'u'];
+    let substituir = ['a', 'e', 'i', 'o', 'u']; 
 
     if (!texto == '') {
         for (let x = 0; x < achar.length; x++) {
